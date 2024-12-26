@@ -1,6 +1,7 @@
 package org.vimeClass;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class User {
     private int id;
@@ -143,21 +144,40 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "\nid=" + id +
-                ", \nusername='" + username + '\'' +
-                ", \nlevel=" + level +
-                ", \nlevelPercentage=" + levelPercentage +
-                ", \nrank='" + rank + '\'' +
-                ", \nranks=" + ranks +
-                ", \nplayedSeconds=" + playedSeconds +
-                ", \nlastSeen=" + lastSeen +
-                ", \nprime=" + prime +
-                ", \nprimeStart=" + primeStart +
-                ", \nprimeIcon='" + primeIcon + '\'' +
-                ", \nprefix='" + prefix + '\'' +
-                ", \ncustomColors=" + customColors +
-                ", \nguild=" + guild.getName() +
-                ", \nonline=" + online +
+                "\nId = " + id +
+                "\nUsername = '" + username + '\'' +
+                "\nLevel = " + level +
+                "\nRank = '" + rank + '\'' +
+                "\nPlayedHours = " + playedSeconds/60/60 +
+                "\nLastSeen Date = " + new Date(lastSeen * 1000L) +
+                "\nGuild = " + guild.getName() + '}';
+    }
+
+    public String toExtendedString() {
+        return "User{" +
+                "\nId = " + id +
+                "\nUsername = '" + username + '\'' +
+                "\nLevel = " + level +
+                "\nLevelPercentage = " + levelPercentage +
+                "\nRank = '" + rank + '\'' +
+                "\nRanks = " + ranks +
+
+                "\n\nPlayedSeconds = " + playedSeconds +
+                "\nPlayedMinutes = " + playedSeconds/60 +
+                "\nPlayedHours = " + playedSeconds/60/60 +
+                "\nPlayedDays = " + playedSeconds/60/60/24 +
+                "\nPlayedYears = " + playedSeconds/60/60/24/365 +
+
+                "\n\nLastSeen = " + lastSeen +
+                "\nLastSeen Date = " + new Date(lastSeen * 1000L) +
+
+                "\n\nPrime = " + prime +
+                "\nPrimeStart = " + primeStart +
+                "\nPrimeIcon = '" + primeIcon + '\'' +
+                "\nPrefix = '" + prefix + '\'' +
+                "\nCustomColors = " + customColors +
+                "\nGuild = " + guild.getName() +
+                "\nOnline = " + online +
                 '}';
     }
 }

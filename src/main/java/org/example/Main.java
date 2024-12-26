@@ -10,14 +10,7 @@ import java.net.URL;
 
 public class Main {
     public static void main(String[] args) throws MalformedURLException {
-        System.out.println(UserParser.parseNames("_Lord_Alex_"));
-    }
-    public static JsonNode get(URL url) {
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            return mapper.readTree(url);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        //System.out.println(UserParser.parseNames("_Lord_Alex_"));
+        System.out.println(UserParser.parseMatch("_Lord_Alex_").getMatches().getFirst().getId());
     }
 }
